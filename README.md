@@ -1,16 +1,45 @@
-# flutter_aplication_4
+# 🧠 Escáner Inteligente con Machine Learning (Flutter + TFLite)
 
-A new Flutter project.
+Una aplicación móvil desarrollada en Flutter que utiliza la cámara del dispositivo para clasificar imágenes en tiempo real. Integra un modelo de Machine Learning (MobileNet V1) ejecutado localmente gracias a TensorFlow Lite.
 
-## Getting Started
+## ✨ Características
+* **Inferencia Local:** Clasificación de imágenes rápida y sin necesidad de conexión a internet.
+* **Interfaz Adaptativa:** Diseño moderno que soporta rotación de pantalla (Portrait / Landscape).
+* **Modo Oscuro/Claro:** Botón integrado para cambiar el tema de la aplicación al instante.
+* **Uso de Cámara y Galería:** Permite tomar fotos en el momento o seleccionar imágenes guardadas.
 
-This project is a starting point for a Flutter application.
+## 🚀 Cómo ejecutar este proyecto
 
-A few resources to get you started if this is your first Flutter project:
+Este repositorio contiene únicamente el "corazón" de la aplicación (código Dart, dependencias y el modelo de IA) para mantenerlo ligero. Sigue estos pasos para probarlo en tu máquina:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 1. Clonar el repositorio
+```bash
+git clone [https://github.com/luisFerHerna/Aplicacion_con_Modelo-ML.git](https://github.com/luisFerHerna/Aplicacion_con_Modelo-ML.git)
+cd Aplicacion_con_Modelo-ML
+```
+2. Regenerar las carpetas nativas y descargar dependencias
+Como es un repositorio limpio, necesitas que Flutter construya las carpetas de Android/iOS:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter create .
+flutter pub get
+```
+3. Configurar permisos (Android)
+Para que la cámara funcione correctamente, debes agregar el permiso en el manifiesto de Android.
+Abre el archivo android/app/src/main/AndroidManifest.xml y agrega esta línea justo antes de la etiqueta <application>:
+
+```XML
+<uses-permission android:name="android.permission.CAMERA" />
+```
+4. ¡A compilar!
+Conecta tu dispositivo físico o inicia un emulador y ejecuta:
+
+```bash
+flutter run
+```
+🛠️ Tecnologías utilizadas
+  - Flutter - Framework de UI
+
+  - tflite_flutter - Motor de inferencia
+
+  - image_picker - Acceso a cámara y galería
