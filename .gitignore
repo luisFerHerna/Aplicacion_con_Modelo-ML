@@ -1,0 +1,18 @@
+# 1. Ignorar absolutamente todo el proyecto por defecto
+*
+
+# 2. No ignorar la estructura de carpetas (Git necesita verlas para entrar)
+!*/
+
+# 3. Archivos principales de código
+!lib/main.dart
+!lib/service.dart
+
+# 4. Modelo TFLite y etiquetas
+!assets/models/mobilenet_v1_1.0_224.tflite
+!assets/models/labels.txt
+
+# 5. Archivos de configuración esenciales
+!pubspec.yaml
+!.gitignore
+!README.md
